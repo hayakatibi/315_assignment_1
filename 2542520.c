@@ -100,12 +100,23 @@ int countCustomers (FILE *inFile){
     //WRITE YOUR CODE HERE
     int NumberOfLines=0;
     char characters;
-    while ((characters=fgetc(inFile))!=EOF) //reading the file character by character until the end of file
-    {
-        if(characters=='\n' ){ //counting the number of lines
-            NumberOfLines++;
-        }
-    }
+    char *NamesArray[100];
+    int i;
+    for( i=0 ; i<100 ; i++)
+        NamesArray[i]= NULL;
+    char *name;
+    while(fscanf(inFile, "%[^;];%[^;];%[^;];%[^;];%[^;];%[^;];%s/n",name)!=EOF)
+        printf("name is %s",name);
+//    while ((characters=fgetc(inFile))!=EOF) //reading the file character by character until the end of file
+//    {
+//        for(i=0 ; i< 100 ; i++ )
+//            if (NamesArray[i]==NULL)
+//               strcpy(NamesArray[i],) 
+//            
+//        if(characters=='\n' ){ //counting the number of lines
+//            NumberOfLines++;j
+//        }
+//    }
     return NumberOfLines;
 }
 
